@@ -61,6 +61,7 @@ class PlayBook(object):
         deps = collections.namedtuple("Dependencies",
                                       ["playbook", "inventory", "stats",
                                        "callbacks", "runner_callbacks"])
+        utils.VERBOSITY = 0 # choose from 0, 1, 3, 4 to increase verbosity
         deps.playbook = playbook
         if stats is None:
             deps.stats = ansible_callbacks.AggregateStats()
